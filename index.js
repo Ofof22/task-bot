@@ -9,19 +9,7 @@ const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v10");
 const { readdirSync } = require("fs");
 const moment = require("moment");
-const { DisTube } = require("distube")
-const { SoundCloudPlugin } = require('@distube/soundcloud');
-const { SpotifyPlugin } = require("@distube/spotify")
-const { DeezerPlugin } = require("@distube/deezer")
 
-client.DisTube = new DisTube(client, {
-    leaveOnEmpty: true,
-    leaveOnFinish: true,
-    leaveOnStop: true,
-    searchSongs: 5,
-    searchCooldown: 30,
-    plugins: [new SpotifyPlugin(), new SoundCloudPlugin(), new DeezerPlugin()]
-})
 const express = require('express');
 
 
