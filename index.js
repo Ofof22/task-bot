@@ -28,12 +28,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// Özel bir yol için yanıt verme
 
-// Belirtilen bir port üzerinden sunucuyu başlatma
-app.listen(port, () => {
-  console.log(`Sunucu http://localhost:${port} üzerinde çalışıyor`);
-});
 
 let token = config.bot.token;
 
