@@ -23,12 +23,21 @@ client.DisTube = new DisTube(client, {
     plugins: [new SpotifyPlugin(), new SoundCloudPlugin(), new DeezerPlugin()]
 })
 const express = require('express');
-const app = express();
-const port = 3000;
+const path = require('path');
 
-// Ana sayfa isteğine yanıt verme
-app.get('/', (req, res) => {
-  res.send('Merhaba, Express ile dünyaya hoş geldiniz!');
+const app = express();
+
+// Statik dosyaları sunmak için
+app.use(express.static(path.join(__dirname, 'public')));
+
+// "views" klasörüne gitmek için
+app.get('/views', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 // Özel bir yol için yanıt verme
